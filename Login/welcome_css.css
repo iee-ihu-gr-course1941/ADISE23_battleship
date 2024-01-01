@@ -1,0 +1,83 @@
+.buttonGreen {
+  background-color: #176607;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Comic Sans MS";
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.buttonRed {
+  background-color: #66071c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Comic Sans MS";
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.buttonYellow {
+  background-color: #fcba03;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Comic Sans MS";
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.buttonBlue {
+  background-color: #15125c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Comic Sans MS";
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+h1 {
+  text-decoration: overline;
+  text-decoration-thickness: 3px;
+  font-weight: normal;
+}
+body {
+	font-family: "Comic Sans MS";
+	text-align: center; 
+	color: #edd8bb;
+	background-image: url("../images/battleship_welcome_img.jpg");	
+	background-size: cover;
+}
+.wrapper{
+width: 360px; 
+padding: 20px;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+a {
+  color: #000000;
+  font-weight: bold;
+}

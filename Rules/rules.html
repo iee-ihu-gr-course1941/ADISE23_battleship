@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Battleship Game</title>
+<link href="../Game/public/img/favicon.png" rel="icon">
+<link href="../music/music.css" rel="stylesheet" type="text/css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS";
+  font-size: 14px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 5px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 25px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Comic Sans MS";
+}
+
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+.fix{
+	cursor: pointer;
+    position:fixed;
+    bottom:20px;
+    right:5%;
+}
+.fix2{
+	cursor: pointer;
+    position:fixed;
+    bottom:20px;
+    right:10%;
+}
+</style>
+</head>
+<body>
+
+<script>
+var audio = new Audio("../music/Pirates_of_the_Caribbean.mp3");
+
+audio.oncanplaythrough = function(){
+audio.play();
+}
+
+audio.loop = true;
+
+audio.onended = function(){
+audio.play();
+}
+
+</script>
+<video autoplay muted loop id="myVideo">
+  <source src="../Game/public/img/Ocean_Waves_slow_motion_videvo.mov" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <p>Before we begin you must remember that even in a battleship you have to abide by the rules, admiral!</p>
+ <h4>Game Objective</h4>
+<p>The object of Battleship is to try and sink all of the other player's ships before they sink all of your ships.
+All of the other player's ships are somewhere on his/her board.  You try and hit them by clicking
+one of the squares on the board.  The enemy also tries to hit your ships.
+Neither you nor the enemy can see the other's board so you must try to guess where they are.
+</p>
+
+<h4>Starting a New Game</h4>
+<p>Each player places the 5 ships somewhere on their board.  The ships can only be placed vertically or horizontally.
+Diagonal placement is not allowed. No part of a ship may hang off the edge of the board.  Ships may not overlap each other.
+No ships may be placed on another ship.</p>
+
+<p>Once the guessing begins, the players may not move the ships. The 5 ships are:  Carrier (occupies 5 spaces), Battleship (4), Cruiser (3), Submarine (3), and Destroyer (2).</p>
+
+<h4>Playing the Game</h4>
+<p>Players take turns guessing by clicking on squares. The enemy responds with "hit" or "miss" as appropriate.
+Both players should mark their board with pegs:  red for hit, white for miss. For example, if you click F6 and your opponent
+does not have any ship located at F6, your opponent would respond with a white mark.</p>
+
+<p>When all of the squares that one of your ships occupies have been hit, the ship will be sunk.
+You should announce "hit and sunk".</p>
+
+<p>As soon as all of one player's ships have been sunk, the game ends.</p>
+<p><i>Fair winds and following seas!</i></p>
+
+  <button id="myBtn" onclick="location.href='../Game/public/battleship.html';">Battle</button>
+  <button id="myBtn" onclick="history.back();">Back</button>
+  <img src="../music/music_imgs/play.jpg" class="fix2" onclick="audio.play()">
+  <img src="../music/music_imgs/mute.jpg" class="fix" onclick="audio.pause()">
+</div>
+
+
+
+</body>
+</html>

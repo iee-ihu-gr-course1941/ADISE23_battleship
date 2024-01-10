@@ -1,0 +1,455 @@
+/* ###################Generally############################# */
+* {
+    font-family: 'Comic Sans MS';
+    text-decoration: none; 
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+/*########################Generally style buttons, imgs, title, background#####################*/
+.myBtn {
+	width: 200px;
+	font-size: 18px;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px;
+	border-radius: 25px;
+	border: none;
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+	font-family: "Comic Sans MS";
+	margin-right: 1000px;
+	}
+form .myBtn {
+	width: 200px;
+	font-size: 18px;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px;
+	border-radius: 25px;
+	border: none;
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+	font-family: "Comic Sans MS";
+	}
+
+
+.myBtn:hover {
+	background: #ddd;
+	color: black;
+	}
+#play {
+      cursor: pointer;
+      position:fixed;
+      top:80px;
+      right:10%;
+      }
+#mute {
+      cursor: pointer;
+      position:fixed;
+      top:80px;
+      right:5%;
+      }
+#rotate {
+ 	cursor: pointer;
+    	}
+.title {
+       text-align: center;
+       }
+.avatar {
+   	vertical-align: middle;
+  	width: 100px;
+  	height: 100px;	
+  	text-align: center;
+  	display: flex;
+	align-items: center;
+   	justify-content: center;
+	padding-top: 5px;
+   	padding-bottom: 12px;
+	margin: auto;
+  	}
+.avatar img {
+	    border-radius: 50%;
+	    width:200px;
+  	    height:200px;
+  	    }
+img {
+    border: 3px solid black;
+    }
+body {
+      font-family: "Comic Sans MS";
+      color: black;
+      background-image: url("../../../images/oceanHD.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      }
+
+
+/* #############################Battleship itself, game boards##################################### */
+.game-board {
+    color: black;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;    
+    }
+.game .opponents {
+	font-weight: bold;
+  	font-size: 25px;
+  	width: 100%;
+  	display: flex;
+  	justify-content: space-evenly; 
+	}
+
+.game .opponents div {
+	border: 3px solid black;  
+  	border-radius: 25px;  
+  	display: flex;
+ 	align-items: center;
+  	justify-content: center;
+  	width: 310px;
+  	height: 46px; 
+  	color: black;			 	   
+	}
+
+.game .opponents #capitan {
+	background:#b3a514;
+	}
+.game .opponents #robo {
+  	background:#a61129;
+  	}
+.game .repo {
+  	display: flex;
+  	width: 100%;
+  	justify-content: space-evenly;
+	}
+/*###################################the whole board###########################################*/
+.game .matrix-robot, 
+.game .matrix-man {
+  		width: 310px;
+  		height: 310px;
+  		display: flex;
+  		flex-wrap: wrap;
+  		margin: 10px 0px;
+		}
+/*###########################the small squares#########################################*/
+.game .matrix div {
+  	width: 31px;
+  	height: 31px;
+  	outline: 0.1px solid black;
+  	border-radius: 8px;
+  	cursor: pointer;
+	}
+
+.game .matrix-man div:hover {
+  	background-color: #b3a514;
+	} 
+
+.game .matrix-robot div:hover {
+  	background-color: #a61129;
+	} 
+
+.game .matrix-man {
+  	background-color: #dba174;
+	}
+.game .isHorizontal {
+  display: flex;
+  justify-content: center;
+}
+.game .gameAdmin {
+  font-family: "Comic Sans MS";
+  font-size: 22px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}	
+/*#################################the bgcolor from robot 's board###########################################
+  ####################and the bgcolor(same) to spot where the ships are placed##############################*/
+.game .matrix-robot,
+.game .destroyer,
+.game .submarine,
+.game .cruiser,
+.game .battleship,
+.game .carrier {
+ background-color: #6e5c4b;
+}
+/*#####################################hit or miss##############################################*/
+.game .strike {
+  	display: flex;
+  	align-items: center;
+  	flex-direction: column;
+  	justify-content: center;
+  	background-color: #6f1717;
+	}
+.game .strike .fas {
+  	color: red;	
+	}
+.game .miss {
+  	display: flex;
+  	align-items: center;
+  	flex-direction: column;
+  	justify-content: center;
+  	background-color:#c5e5e8
+	}
+.game .miss .fas {
+  	color: white;
+	}
+
+.game .hidden_mess {
+  		width: 100%;
+  		display: flex;
+  		justify-content: center;
+  		padding-top: 5px;
+  		padding-bottom: 5px;
+		}
+.game .admiral {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 6.2px;
+}
+
+.game .admiral .matrix-display {
+  width: 700px;
+  display: flex;
+  height: 220px;
+}
+/*##########################The ships##################################################*/
+.game .admiral .matrix-display .ships-repo, .game .admiral .matrix-display .carrier-repo,
+.game .admiral .matrix-display .battleship-repo, .game .admiral .matrix-display .cruiser-repo,
+.game .admiral .matrix-display .submarine-repo, .game .admiral .matrix-display .destroyer-repo {
+  height: 31px;
+  display: flex;
+  margin: 8px;
+}
+
+.game .admiral .matrix-display .ship div {
+  width: 31px;
+  height: 31px;
+  border-radius: 2px;
+  cursor: grab;
+}
+/*destroyer horizontal position*/
+.game .admiral .matrix-display .destroyer-repo {
+  width: 62px;
+}
+.game .admiral .matrix-display .destroyer-repo #destroyer-0,
+.game .admiral .matrix-display .destroyer-repo #destroyer-1 {
+  background-size: 31px;
+  transform: rotate(270deg);
+}
+.game .admiral .matrix-display .destroyer-repo #destroyer-0 {
+  background-image: url('../img/destroyer-0.png');
+}
+.game .admiral .matrix-display .destroyer-repo #destroyer-1 {
+  background-image: url('../img/destroyer-1.png');
+}
+/*destroyer vertical position*/
+.game .admiral .matrix-display .destroyer-repo-vertical {
+  width: 31px;
+  height: 62px;
+  flex-wrap: wrap;
+}
+.game .admiral .matrix-display .destroyer-repo-vertical #destroyer-0,
+.game .admiral .matrix-display .destroyer-repo-vertical #destroyer-1 {
+  transform: rotate(0deg);
+}
+/*submarine horizontal position*/
+.game .admiral .matrix-display .submarine-repo {
+  width: 93px;
+}
+.game .admiral .matrix-display .submarine-repo #submarine-0,
+.game .admiral .matrix-display .submarine-repo #submarine-1,
+.game .admiral .matrix-display .submarine-repo #submarine-2 {
+  background-size: 31px;
+  transform: rotate(270deg);
+}
+
+.game .admiral .matrix-display .submarine-repo #submarine-0 {
+  background-image: url('../img/submarine-0.png');
+}
+
+.game .admiral .matrix-display .submarine-repo #submarine-1 {
+  background-image: url('../img/submarine-1.png');
+}
+
+.game .admiral .matrix-display .submarine-repo #submarine-2 {
+  background-image: url('../img/submarine-2.png');
+}
+
+/*submarine vertical position*/
+.game .admiral .matrix-display .submarine-repo-vertical {
+  width: 31px;
+  height: 93px;
+  flex-wrap: wrap;
+}
+.game .admiral .matrix-display .submarine-repo-vertical #submarine-0,
+.game .admiral .matrix-display .submarine-repo-vertical #submarine-1,
+.game .admiral .matrix-display .submarine-repo-vertical #submarine-2 {
+  transform: rotate(0deg);
+}
+
+/*cruiser horizontal position*/
+.game .admiral .matrix-display .cruiser-repo {
+  width: 93px;
+}
+.game .admiral .matrix-display .cruiser-repo #cruiser-0,
+.game .admiral .matrix-display .cruiser-repo #cruiser-1,
+.game .admiral .matrix-display .cruiser-repo #cruiser-2 {
+  background-size: 31px;
+  transform: rotate(270deg);
+}
+.game .admiral .matrix-display .cruiser-repo #cruiser-0 {
+  background-image: url('../img/cruiser-0.png');
+}
+.game .admiral .matrix-display .cruiser-repo #cruiser-1 {
+  background-image: url('../img/cruiser-1.png');
+}
+.game .admiral .matrix-display .cruiser-repo #cruiser-2 {
+  background-image: url('../img/cruiser-2.png');
+}
+/*cruiser vertical position*/
+.game .admiral .matrix-display .cruiser-repo-vertical {
+  width: 31px;
+  height: 93px;
+  flex-wrap: wrap;
+}
+.game .admiral .matrix-display .cruiser-repo-vertical #cruiser-0,
+.game .admiral .matrix-display .cruiser-repo-vertical #cruiser-1,
+.game .admiral .matrix-display .cruiser-repo-vertical #cruiser-2 {
+  transform: rotate(0deg);
+}
+/*battleship horizontal position*/
+.game .admiral .matrix-display .battleship-repo {
+  width: 124px;
+}
+.game .admiral .matrix-display .battleship-repo #battleship-0,
+.game .admiral .matrix-display .battleship-repo #battleship-1,
+.game .admiral .matrix-display .battleship-repo #battleship-2,
+.game .admiral .matrix-display .battleship-repo #battleship-3 {
+  background-size: 31px;
+  transform: rotate(270deg);
+}
+.game .admiral .matrix-display .battleship-repo #battleship-0 {
+  background-image: url('../img/battleship-0.png');
+}
+.game .admiral .matrix-display .battleship-repo #battleship-1 {
+  background-image: url('../img/battleship-1.png');
+}
+.game .admiral .matrix-display .battleship-repo #battleship-2 {
+  background-image: url('../img/battleship-2.png');
+}
+.game .admiral .matrix-display .battleship-repo #battleship-3 {
+  background-image: url('../img/battleship-3.png');
+}
+/*battleship vertical position*/
+.game .admiral .matrix-display .battleship-repo-vertical {
+  width: 31px;
+  height: 124px;
+  flex-wrap: wrap;
+}
+.game .admiral .matrix-display .battleship-repo-vertical #battleship-0,
+.game .admiral .matrix-display .battleship-repo-vertical #battleship-1,
+.game .admiral .matrix-display .battleship-repo-vertical #battleship-2,
+.game .admiral .matrix-display .battleship-repo-vertical #battleship-3 {
+  transform: rotate(0deg);
+}
+/*carrier horizontal position*/
+.game .admiral .matrix-display .carrier-repo {
+  width: 155px;
+}
+.game .admiral .matrix-display .carrier-repo #carrier-0,
+.game .admiral .matrix-display .carrier-repo #carrier-1,
+.game .admiral .matrix-display .carrier-repo #carrier-2,
+.game .admiral .matrix-display .carrier-repo #carrier-3,
+.game .admiral .matrix-display .carrier-repo #carrier-4 {
+  background-size: 31px;
+  transform: rotate(270deg);
+}
+.game .admiral .matrix-display .carrier-repo #carrier-0 {
+  background-image: url('../img/carrier-0.png');
+}
+.game .admiral .matrix-display .carrier-repo #carrier-1 {
+  background-image: url('../img/carrier-1.png');
+}
+.game .admiral .matrix-display .carrier-repo #carrier-2 {
+  background-image: url('../img/carrier-2.png');
+}
+.game .admiral .matrix-display .carrier-repo #carrier-3 {
+  background-image: url('../img/carrier-3.png');
+}
+.game .admiral .matrix-display .carrier-repo #carrier-4 {
+  background-image: url('../img/carrier-4.png');
+}
+/*carrier vertical position*/
+.game .admiral .matrix-display .carrier-repo-vertical {
+  width: 31px;
+  height: 155px;
+  flex-wrap: wrap;
+}
+.game .admiral .matrix-display .carrier-repo-vertical #carrier-0,
+.game .admiral .matrix-display .carrier-repo-vertical #carrier-1,
+.game .admiral .matrix-display .carrier-repo-vertical #carrier-2,
+.game .admiral .matrix-display .carrier-repo-vertical #carrier-3,
+.game .admiral .matrix-display .carrier-repo-vertical #carrier-4 {
+  transform: rotate(0deg);
+}
+/*############################The part where the winner is announced#########################################*/
+.conceal {
+  	display: none;
+	}
+.whoWon {
+  	font-size: 80px;
+  	color: black;
+  	width: 100%;
+  	height: 100%;
+  	background-image: url("../img/water_GIF.gif");
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	position: absolute;
+  	top: auto;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	}
+
+.whoWon h1 {
+  	font-family: 'Comic Sans MS';
+  	font-size: 80px;
+  	}
+
+.whoWon div button {
+ 	text-decoration: none;
+  	color: white;
+  	background: black;
+  	border: 1px solid grey;
+  	padding: 15px 32px;
+  	font-size: 18px;
+ 	border-radius: 25px;
+ 	cursor: pointer; 
+	}
+
+.whoWon div button:hover {
+ 	 background: grey;
+  	color: black;
+  	}
+
+.whoWon div button a {
+  	color: white;
+  	}
+
+

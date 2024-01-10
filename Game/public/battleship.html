@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link href="img/favicon.png" rel="icon">
+    <!-- CSS-->
+    <link href="../../music/music.css" rel="stylesheet" type="text/css">
+    <link href="css/naval.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- JavaScript -->
+    <script src="js/battleship.js" async></script>
+ </head>
+ <body>
+ 	<!--game section-->
+ 	<section class="game game-board" id="game-board">
+		<!-- title, buttons, music-->
+        <div class="title">
+          	<h1>Ahoy!</h1>
+          	<h1>...may forever you feel, upon your cheek, the salty breeze...</h1>
+		</div>
+
+
+        <button class="myBtn" onclick="history.back();">Back</button>
+        <button class="myBtn" onclick="location.reload();">Replace your ships</button>
+		<div class="avatar">
+			<img src="img/your_captain.png" alt="Your captain"> <span>VS</span> <img src="img/captain_bot.jpg" alt="captain_bot">
+        </div>
+		  		<img id="play" src="../../music/music_imgs/play.jpg" alt="play" onclick="audio2.play()">
+  				<img id="mute" src="../../music/music_imgs/mute.jpg" alt="mute" onclick="audio2.pause()">
+      <!-- Opponents -->
+      <div class="opponents">
+        <div id="capitan">
+         <p>Your Captain's Board</p>
+        </div>
+        <div id="robo">
+          <p>Robo Captain's Board</p>
+        </div>
+      </div>
+
+      <!-- Game matrix -->
+      <div class="repo">
+        <div class="matrix matrix-man"></div>
+        <div class="matrix matrix-robot"></div>
+      </div>
+
+      <!-- Game Admin: Turn and Info -->
+      <div class="gameAdmin">
+        <h3 id="turn">Place your ships!</h3>
+        <h3 id="message"></h3>
+      </div>
+
+      <!-- Rotate Ships-->
+       <div class="hidden_mess">
+        <img src="img/vectors.jpg" id="rotate">
+      </div>
+
+      <!-- Ships -->
+      <div class="admiral">
+        <div class="matrix-display">
+			<div class="ship carrier-repo" draggable="true">
+            	<div id="carrier-0"></div>
+            	<div id="carrier-1"></div>
+            	<div id="carrier-2"></div>
+            	<div id="carrier-3"></div>
+            	<div id="carrier-4"></div>
+          </div>
+          <div class="ship battleship-repo" draggable="true">
+		              <div id="battleship-0"></div>
+		              <div id="battleship-1"></div>
+		              <div id="battleship-2"></div>
+		              <div id="battleship-3"></div>
+          </div>
+          <div class="ship cruiser-repo" draggable="true">
+		              <div id="cruiser-0"></div>
+		              <div id="cruiser-1"></div>
+		              <div id="cruiser-2"></div>
+          </div>
+           <div class="ship submarine-repo" draggable="true">
+		              <div id="submarine-0"></div>
+		              <div id="submarine-1"></div>
+		              <div id="submarine-2"></div>
+          </div>
+        	<div class="ship destroyer-repo" draggable="true">
+            	<div id="destroyer-0"></div>
+            	<div id="destroyer-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end of battle Section -->
+    <section class="conceal" id="eob">
+      	<h1 id="end">End of Battle</h1>
+
+		<div>
+        	<button><a href="">Play Again</a></button>
+        	<button><a href="../../Login/welcome.php">Return Home</a></button>
+   		 </div>
+    </section>
+</body>
+</html>
